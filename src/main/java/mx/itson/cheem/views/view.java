@@ -175,7 +175,7 @@ public class view extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Ver todos", jPanel2);
 
-        BtnActualizar.setText("Actualizar");
+        BtnActualizar.setText("Editar");
         BtnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnActualizarActionPerformed(evt);
@@ -207,7 +207,7 @@ public class view extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -252,13 +252,13 @@ public class view extends javax.swing.JFrame {
 
     private void BtnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnActualizarActionPerformed
         // TODO add your handling code here:
-        if (jTableModificar.isEditing()) {
+       if (jTableModificar.isEditing()) {
             jTableModificar.getCellEditor().stopCellEditing();
         }
 
         int fila = jTableModificar.getSelectedRow();
         if (fila == -1) {
-            JOptionPane.showMessageDialog(this, "Selecciona una fila para actualizar.", "Aviso", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Selecciona una fila para editar.", "Aviso", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -288,7 +288,7 @@ public class view extends javax.swing.JFrame {
             System.out.println("Respuesta del servidor: " + body);
 
             if (status >= 200 && status < 300) {
-                JOptionPane.showMessageDialog(this, "Videojuego actualizado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Videojuego editado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this, body, "Error (" + status + ")", JOptionPane.ERROR_MESSAGE);
             }
